@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGanesa"
         android:usesCleartextTraffic="true">
-        <activity android:name=".student.TopUpActivity"></activity>
+        <activity android:name=".student.TopUpActivity"/>
         <activity android:name=".treasurer.KonfirmasiTopUpActivity" />
         <activity android:name=".treasurer.TopUpActivity" />
         <activity android:name=".treasurer.KonfirmasiBayarActivity" />

@@ -8,6 +8,7 @@ public class Config {
     public static final String URL_ABSEN = URL_ACTION + "absen";
     public static final String URL_BAYAR = URL_ACTION + "bayar";
     public static final String URL_TOP_UP = URL_ACTION + "top_up";
+    public static final String URL_REFRESH = URL_ACTION + "refresh_student";
     public static final String URL_GET_ALL = URL_ROOT + "/tampil_jadwal.php";
 
     //JSON Tags
