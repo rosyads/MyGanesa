@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student.ProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Username"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Role"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewRole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView></TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Nama"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Kelas"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewKelas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Tanggal Lahir"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewTglLahir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Agama"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewAgama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Saldo"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                    <TextView
+                        android:id="@+id/textViewSaldo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+                </TableRow>
+            </TableLayout>
+            <Button
+                android:id="@+id/btnAbsen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Absen"
+                android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/btnTopUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Top Up Saldo"
+                android:layout_marginTop="8dp"/>
+            <Button
+                android:id="@+id/btnBayarSpp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bayar SPP"
+                android:layout_marginTop="8dp"/>
+<!--            <Button-->
+<!--                android:id="@+id/btnBayarUP"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Bayar Uang Pangkal"-->
+<!--                android:layout_marginTop="20dp"/>-->
+            <Button
+                android:id="@+id/btnJadwal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Jadwal"
+                android:layout_marginTop="8dp"/>
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
