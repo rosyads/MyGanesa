@@ -97,6 +97,14 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btnHistoryBayar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, HistoryBayarActivity.class);
+                startActivity(intent);
+            }
+        });
+
 //        findViewById(R.id.btnBayarUP).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

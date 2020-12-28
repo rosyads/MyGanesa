@@ -11,7 +11,7 @@ public class ListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_item);
+        setContentView(R.layout.list_item_jadwal);
     }
 
 }

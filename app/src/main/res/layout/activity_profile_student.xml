@@ -146,6 +146,12 @@
                 android:layout_height="wrap_content"
                 android:text="Bayar SPP"
                 android:layout_marginTop="8dp"/>
+            <Button
+                android:id="@+id/btnHistoryBayar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History Bayar SPP"
+                android:layout_marginTop="8dp"/>
 <!--            <Button-->
 <!--                android:id="@+id/btnBayarUP"-->
 <!--                android:layout_width="match_parent"-->

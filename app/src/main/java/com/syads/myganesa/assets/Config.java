@@ -10,6 +10,7 @@ public class Config {
     public static final String URL_TOP_UP = URL_ACTION + "top_up";
     public static final String URL_REFRESH = URL_ACTION + "refresh_student";
     public static final String URL_GET_ALL = URL_ROOT + "/tampil_jadwal.php";
+    public static final String URL_GET_PAID = URL_ROOT + "/tampil_pembayaran.php";
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
@@ -17,5 +18,9 @@ public class Config {
     public static final String TAG_KD_GURU = "kd_guru";
     public static final String TAG_NAMA = "nama";
     public static final String TAG_NAMA_MATPEL = "nama_matpel";
+
+    public static final String TAG_BULAN = "bulan";
+    public static final String TAG_TANGGAL_BAYAR = "tanggal_bayar";
+    public static final String TAG_NOMINAL = "nominal";
 
 }
