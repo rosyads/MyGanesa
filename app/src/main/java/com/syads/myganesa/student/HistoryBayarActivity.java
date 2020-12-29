@@ -11,6 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.syads.myganesa.R;
 import com.syads.myganesa.assets.Config;
@@ -69,9 +70,9 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
                 String nominal = jo.getString(Config.TAG_NOMINAL);
 
                 HashMap<String,String> jadwal = new HashMap<>();
-                jadwal.put(Config.TAG_BULAN,bulan);
-                jadwal.put(Config.TAG_TANGGAL_BAYAR,tgl_bayar);
-                jadwal.put(Config.TAG_NOMINAL,nominal);
+                jadwal.put(Config.TAG_BULAN, "Bulan: "+ bulan);
+                jadwal.put(Config.TAG_TANGGAL_BAYAR, "Tanggal: "+ tgl_bayar);
+                jadwal.put(Config.TAG_NOMINAL, "Nominal: "+ nominal);
                 list.add(jadwal);
             }
 
@@ -80,7 +81,7 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                HistoryBayarActivity.this, list, R.layout.list_item_jadwal,
+                HistoryBayarActivity.this, list, R.layout.list_item_pembayaran,
                 new String[]{ Config.TAG_BULAN, Config.TAG_TANGGAL_BAYAR
                         , Config.TAG_NOMINAL},
                 new int[]{R.id.bulan, R.id.tanggal_bayar, R.id.nominal});
@@ -95,6 +96,7 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
 
             final String nis = user.getUsername();
 
+
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -107,6 +109,7 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
                 loading.dismiss();
                 JSON_STRING = s;
                 showJadwal();
+//                Toast.makeText(HistoryBayarActivity.this, nis, Toast.LENGTH_SHORT).show();
             }
 
             @Override
