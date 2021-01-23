@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:padding="16dp">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -57,7 +58,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Top Up Saldo Siswa"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/buttonHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lihat history pembayaran"
+            android:layout_marginTop="8dp"/>
         <Button
             android:id="@+id/buttonLogout"
             android:layout_width="match_parent"

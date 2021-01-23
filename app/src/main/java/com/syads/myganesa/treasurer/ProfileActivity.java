@@ -61,5 +61,14 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.buttonHistory).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(com.syads.myganesa.treasurer.ProfileActivity.this,
+                        com.syads.myganesa.treasurer.HistoryBayarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

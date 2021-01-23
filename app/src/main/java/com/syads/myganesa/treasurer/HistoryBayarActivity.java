@@ -1,4 +1,4 @@
-package com.syads.myganesa.student;
+package com.syads.myganesa.treasurer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HistoryBayarActivity extends AppCompatActivity implements ListView.OnItemClickListener {
+public class HistoryBayarActivity  extends AppCompatActivity implements ListView.OnItemClickListener {
 
     private ListView listView;
 
@@ -40,7 +40,7 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history_bayar_student);
+        setContentView(R.layout.activity_history_bayar_treasurer);
 
         //getting the current user
         user = PrefManager.getInstance(this).getUser();
@@ -50,7 +50,6 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         getJSON();
-
     }
 
     private void showHistoryBayar(){
@@ -62,11 +61,13 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
+                String nis = jo.getString(Config.TAG_NIS);
                 String bulan = jo.getString(Config.TAG_BULAN);
                 String tgl_bayar = jo.getString(Config.TAG_TANGGAL_BAYAR);
                 String nominal = jo.getString(Config.TAG_NOMINAL);
 
                 HashMap<String,String> historyBayar = new HashMap<>();
+                historyBayar.put(Config.TAG_NIS, "NIS: "+ nis);
                 historyBayar.put(Config.TAG_BULAN, "Bulan: "+ bulan);
                 historyBayar.put(Config.TAG_TANGGAL_BAYAR, "Tanggal: "+ tgl_bayar);
                 historyBayar.put(Config.TAG_NOMINAL, "Nominal: "+ nominal);
@@ -78,10 +79,10 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                HistoryBayarActivity.this, list, R.layout.list_item_pembayaran_student,
-                new String[]{ Config.TAG_BULAN, Config.TAG_TANGGAL_BAYAR
+                com.syads.myganesa.treasurer.HistoryBayarActivity.this, list, R.layout.list_item_pembayaran_treasurer,
+                new String[]{ Config.TAG_NIS, Config.TAG_BULAN, Config.TAG_TANGGAL_BAYAR
                         , Config.TAG_NOMINAL},
-                new int[]{R.id.bulan, R.id.tanggal_bayar, R.id.nominal});
+                new int[]{R.id.nis, R.id.bulan, R.id.tanggal_bayar, R.id.nominal});
 
         listView.setAdapter(adapter);
     }
@@ -91,13 +92,13 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
 
             ProgressDialog loading;
 
-            final String nis = user.getUsername();
+            final String username = user.getUsername();
 
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(HistoryBayarActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(com.syads.myganesa.treasurer.HistoryBayarActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
             }
 
             @Override
@@ -117,10 +118,10 @@ public class HistoryBayarActivity extends AppCompatActivity implements ListView.
 
                 //creating request parameters
                 HashMap<String, String> param = new HashMap<>();
-                param.put("nis", nis);
+                param.put("username", username);
 
                 //returing the response
-                String s = requestHandler.sendPostRequest(Config.URL_GET_PAID, param);
+                String s = requestHandler.sendPostRequest(Config.URL_GET_PAID_TREASURER, param);
                 return s;
 
             }
