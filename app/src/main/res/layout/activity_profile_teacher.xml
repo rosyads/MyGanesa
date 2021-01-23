@@ -102,11 +102,17 @@
             android:text="Absen"
             android:layout_marginTop="20dp"/>
         <Button
+            android:id="@+id/buttonDaftarAbsen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daftar Absen"
+            android:layout_marginTop="8dp"/>
+        <Button
             android:id="@+id/buttonLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Logout"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="20dp"/>
     </LinearLayout>
 
 </RelativeLayout>

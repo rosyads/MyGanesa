@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGanesa"
         android:usesCleartextTraffic="true">
-        <activity android:name=".treasurer.HistoryBayarActivity"></activity>
+        <activity android:name=".teacher.TampilAbsensiActivity"></activity>
+        <activity android:name=".teacher.DaftarAbsenActivity" />
+        <activity android:name=".treasurer.HistoryBayarActivity" />
         <activity android:name=".student.HistoryBayarActivity" />
         <activity android:name=".student.TopUpActivity" />
         <activity android:name=".treasurer.KonfirmasiTopUpActivity" />

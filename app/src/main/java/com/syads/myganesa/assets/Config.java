@@ -12,6 +12,8 @@ public class Config {
     public static final String URL_GET_ALL = URL_ROOT + "/tampil_jadwal.php";
     public static final String URL_GET_PAID = URL_ROOT + "/tampil_pembayaran.php";
     public static final String URL_GET_PAID_TREASURER = URL_ROOT + "/tampil_pembayaran_bendahara.php";
+    public static final String URL_GET_TODAYS_CLASS = URL_ROOT + "/tampil_kelas_ajar.php";
+    public static final String URL_GET_CLASS = URL_ROOT + "/tampil_kelas.php";
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
@@ -24,5 +26,9 @@ public class Config {
     public static final String TAG_TANGGAL_BAYAR = "tanggal_bayar";
     public static final String TAG_NOMINAL = "nominal";
     public static final String TAG_NIS = "nis";
+
+    public static final String TAG_KELAS = "nama_kelas";
+    public static final String CLASS_ID = "id_kelas";
+
 
 }

@@ -58,6 +58,15 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.buttonDaftarAbsen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, DaftarAbsenActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
