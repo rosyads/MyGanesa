@@ -2,7 +2,7 @@ package com.syads.myganesa.assets;
 
 public class Config {
     //Link PHP
-    public static final String URL_ROOT = "http://192.168.8.102/sekerip_apip/android";
+    public static final String URL_ROOT = "http://smpganesasatria.com/android";
     public static final String URL_ACTION = URL_ROOT + "/api.php?action=";
     public static final String URL_LOGIN = URL_ACTION + "login";
     public static final String URL_ABSEN = URL_ACTION + "absen";
