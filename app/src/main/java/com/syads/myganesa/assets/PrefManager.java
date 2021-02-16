@@ -67,6 +67,22 @@ public class PrefManager {
                 editor.apply();
                 break;
             }
+            case "100": { //Wali Siswa
+                SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt(KEY_ID, user.getId());
+                editor.putString(KEY_ROLE, user.getRole());
+                editor.putString(KEY_USERNAME, user.getUsername());
+                editor.putString(KEY_NAMA, user.getNama());
+                editor.putString(KEY_KELAS, user.getKelas());
+                editor.putString(KEY_TGL_LAHIR, user.getTgl_lahir());
+                editor.putString(KEY_AGAMA, user.getAgama());
+                editor.putString(KEY_ID_KELAS, user.getId_kelas());
+                editor.putInt(KEY_SALDO, user.getSaldo());
+                editor.putBoolean(KEY_IS_LOGGED_IN, true);
+                editor.apply();
+                break;
+            }
             case "010": { //Bendahara
                 SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -90,6 +106,18 @@ public class PrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         switch (sharedPreferences.getString(KEY_ROLE, null)) {
             case "011": //Siswa
+                return new User(
+                        sharedPreferences.getInt(KEY_ID, -1),
+                        sharedPreferences.getString(KEY_USERNAME, null),
+                        sharedPreferences.getString(KEY_ROLE, null),
+                        sharedPreferences.getString(KEY_NAMA, null),
+                        sharedPreferences.getString(KEY_KELAS, null),
+                        sharedPreferences.getString(KEY_TGL_LAHIR, null),
+                        sharedPreferences.getString(KEY_AGAMA, null),
+                        sharedPreferences.getString(KEY_ID_KELAS, null),
+                        sharedPreferences.getInt(KEY_SALDO,0)
+                );
+            case "100": //Wali Siswa
                 return new User(
                         sharedPreferences.getInt(KEY_ID, -1),
                         sharedPreferences.getString(KEY_USERNAME, null),

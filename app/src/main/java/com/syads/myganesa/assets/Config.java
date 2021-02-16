@@ -11,6 +11,7 @@ public class Config {
     public static final String URL_REFRESH = URL_ACTION + "refresh_student";
     public static final String URL_GET_ALL = URL_ROOT + "/tampil_jadwal.php";
     public static final String URL_GET_PAID = URL_ROOT + "/tampil_pembayaran.php";
+    public static final String URL_GET_ABSENCE = URL_ROOT + "/tampil_absensi.php";
     public static final String URL_GET_PAID_TREASURER = URL_ROOT + "/tampil_pembayaran_bendahara.php";
     public static final String URL_GET_TODAYS_CLASS = URL_ROOT + "/tampil_kelas_ajar.php";
     public static final String URL_GET_CLASS = URL_ROOT + "/tampil_kelas.php";
@@ -26,6 +27,11 @@ public class Config {
     public static final String TAG_TANGGAL_BAYAR = "tanggal_bayar";
     public static final String TAG_NOMINAL = "nominal";
     public static final String TAG_NIS = "nis";
+
+    public static final String TAG_TANGGAL = "tanggal";
+    public static final String TAG_HARI = "hari";
+    public static final String TAG_ABSEN = "absen";
+    public static final String TAG_MATPEL = "matpel";
 
     public static final String TAG_KELAS = "nama_kelas";
     public static final String CLASS_ID = "id_kelas";

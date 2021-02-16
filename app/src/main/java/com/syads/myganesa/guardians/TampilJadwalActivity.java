@@ -1,4 +1,6 @@
-package com.syads.myganesa.student;
+package com.syads.myganesa.guardians;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -10,13 +12,12 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.syads.myganesa.R;
-import com.syads.myganesa.assets.User;
 import com.syads.myganesa.assets.Config;
 import com.syads.myganesa.assets.PrefManager;
 import com.syads.myganesa.assets.RequestHandler;
+import com.syads.myganesa.assets.User;
+import com.syads.myganesa.student.TampilJadwal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class TampilJadwal extends AppCompatActivity implements ListView.OnItemClickListener {
+public class TampilJadwalActivity extends AppCompatActivity implements ListView.OnItemClickListener {
 
     private ListView listView;
 
@@ -42,7 +43,7 @@ public class TampilJadwal extends AppCompatActivity implements ListView.OnItemCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tampil_jadwal_student);
+        setContentView(R.layout.activity_tampil_jadwal_guardians);
 
         //getting the current user
         user = PrefManager.getInstance(this).getUser();
@@ -81,7 +82,7 @@ public class TampilJadwal extends AppCompatActivity implements ListView.OnItemCl
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                TampilJadwal.this, list, R.layout.list_item_jadwal,
+                TampilJadwalActivity.this, list, R.layout.list_item_jadwal,
                 new String[]{ Config.TAG_JAMPEL, Config.TAG_KD_GURU
                         , Config.TAG_NAMA, Config.TAG_NAMA_MATPEL},
                 new int[]{R.id.jampel, R.id.kd_guru, R.id.nama, R.id.nama_matpel});
@@ -99,7 +100,7 @@ public class TampilJadwal extends AppCompatActivity implements ListView.OnItemCl
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(TampilJadwal.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(TampilJadwalActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
             }
 
             @Override

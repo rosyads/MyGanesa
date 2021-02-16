@@ -66,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.radioWaliSiswa).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etUsername.setInputType(InputType.TYPE_CLASS_NUMBER);
+            }
+        });
+
         findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }else if(role.equals("101")) {
                 Intent intent = new Intent(MainActivity.this, com.syads.myganesa.teacher.ProfileActivity.class);
+                startActivity(intent);
+            }else if(role.equals("010")) {
+                Intent intent = new Intent(MainActivity.this, com.syads.myganesa.treasurer.ProfileActivity.class);
+                startActivity(intent);
+            }else if(role.equals("100")) {
+                Intent intent = new Intent(MainActivity.this, com.syads.myganesa.guardians.ProfileActivity.class);
                 startActivity(intent);
             }
         }
@@ -180,6 +193,25 @@ public class MainActivity extends AppCompatActivity {
                         //starting the profile activity
                         finish();
                         startActivity(new Intent(getApplicationContext(), com.syads.myganesa.treasurer.ProfileActivity.class));
+                    }else if(userJson.getString("role").equals("100")){
+                        //creating a new user object
+                        User guardians = new User(
+                                userJson.getInt("id"),
+                                userJson.getString("username"),
+                                userJson.getString("role"),
+                                userJson.getString("nama"),
+                                userJson.getString("kelas"),
+                                userJson.getString("tgl_lahir"),
+                                userJson.getString("agama"),
+                                userJson.getString("id_kelas"),
+                                userJson.getInt("saldo")
+                        );
+                        //storing the user in shared preferences
+                        PrefManager.getInstance(getApplicationContext()).setUserLogin(guardians,"100");
+                        //starting the profile activity
+                        finish();
+                        startActivity(new Intent(getApplicationContext(), com.syads.myganesa.guardians.ProfileActivity.class));
+
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
