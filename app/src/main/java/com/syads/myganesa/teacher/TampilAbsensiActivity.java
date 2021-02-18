@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.syads.myganesa.R;
 import com.syads.myganesa.assets.Config;
@@ -21,6 +22,7 @@ import com.syads.myganesa.assets.User;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,13 +31,11 @@ import java.util.HashMap;
 
 public class TampilAbsensiActivity extends AppCompatActivity implements ListView.OnItemClickListener {
 
-    private ListView listView;
-
-    private String JSON_STRING;
-
     User user;
-
-    String id_kelas,jampel,tanggal;
+    String id_kelas, jampel, tanggal;
+    private ListView listView;
+    private String JSON_STRING;
+    TextView tvTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +46,22 @@ public class TampilAbsensiActivity extends AppCompatActivity implements ListView
 
     }
 
-    public void init(){
+    public void init() {
         Intent intent = getIntent();
         id_kelas = intent.getStringExtra(Config.CLASS_ID);
         jampel = intent.getStringExtra(Config.TAG_JAMPEL);
 
+        tvTotal = (TextView) findViewById(R.id.tvTotal);
+
         user = PrefManager.getInstance(this).getUser();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        tanggal = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat("E dd-MM-yyyy HH:mm");
+        String currentDateandTime = sdf.format(new Date());
+        String tahun = currentDateandTime.substring(10,14);
+        String bulan = currentDateandTime.substring(7,9);
+        String tgl   = currentDateandTime.substring(4,6);
+
+        tanggal = tahun+"-"+bulan+"-"+tgl;
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
@@ -62,19 +69,19 @@ public class TampilAbsensiActivity extends AppCompatActivity implements ListView
 
     }
 
-    private void showAbsensi(){
+    private void showAbsensi() {
         JSONObject jsonObject = null;
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
-            for(int i = 0; i<result.length(); i++){
+            for (int i = 0; i < result.length(); i++) {
                 JSONObject jo = result.getJSONObject(i);
                 String nis = jo.getString(Config.TAG_NIS);
                 String nama = jo.getString(Config.TAG_NAMA);
 
-                HashMap<String,String> listKelas = new HashMap<>();
+                HashMap<String, String> listKelas = new HashMap<>();
                 listKelas.put(Config.TAG_NIS, nis);
                 listKelas.put(Config.TAG_NAMA, nama);
                 list.add(listKelas);
@@ -85,25 +92,27 @@ public class TampilAbsensiActivity extends AppCompatActivity implements ListView
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                com.syads.myganesa.teacher.TampilAbsensiActivity.this, list, R.layout.list_item_kelas,
+                TampilAbsensiActivity.this, list, R.layout.list_item_kelas,
                 new String[]{Config.TAG_NIS, Config.TAG_NAMA},
                 new int[]{R.id.nis, R.id.nama});
 
         listView.setAdapter(adapter);
+
+        String text = "Total kehadiran "+list.size();
+
+        tvTotal.setText(text);
     }
 
-    private void getJSON(){
-        class GetJSON extends AsyncTask<Void,Void,String> {
-
-            ProgressDialog loading;
+    private void getJSON() {
+        class GetJSON extends AsyncTask<Void, Void, String> {
 
             final String kd_guru = user.getKd_guru();
-
+            ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(com.syads.myganesa.teacher.TampilAbsensiActivity.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(TampilAbsensiActivity.this, "Mengambil Data", "Mohon Tunggu...", false, false);
             }
 
             @Override
@@ -124,6 +133,7 @@ public class TampilAbsensiActivity extends AppCompatActivity implements ListView
                 HashMap<String, String> param = new HashMap<>();
                 param.put("kd_guru", kd_guru);
                 param.put("id_kelas", id_kelas);
+                param.put("tanggal", tanggal);
 
                 //returing the response
                 String s = requestHandler.sendPostRequest(Config.URL_GET_CLASS, param);

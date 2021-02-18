@@ -53,8 +53,7 @@
             android:id="@+id/radioWaliSiswa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wali"
-            android:checked="true"/>
+            android:text="Wali"/>
 
         <RadioButton
             android:id="@+id/radioGuru"
