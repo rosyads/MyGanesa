@@ -200,7 +200,7 @@ public class AbsenActivity extends AppCompatActivity implements ZXingScannerView
                 if (!obj.getBoolean("error")) {
                     Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     finish();
-                    startActivity(new Intent(getApplicationContext(), com.syads.myganesa.teacher.ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 }else{
                     Toast.makeText(getApplicationContext(), "Absensi Gagal", Toast.LENGTH_SHORT).show();
                 }
