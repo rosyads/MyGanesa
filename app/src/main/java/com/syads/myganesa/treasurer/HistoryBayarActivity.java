@@ -59,6 +59,13 @@ public class HistoryBayarActivity  extends AppCompatActivity implements ListView
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
+            HashMap<String, String> header = new HashMap<>();
+            header.put(Config.TAG_NIS, "NIS");
+            header.put(Config.TAG_BULAN, "BULAN");
+            header.put(Config.TAG_TANGGAL_BAYAR, "TANGGAL BAYAR");
+            header.put(Config.TAG_NOMINAL, "NOMINAL");
+            list.add(header);
+
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
                 String nis = jo.getString(Config.TAG_NIS);
@@ -67,10 +74,10 @@ public class HistoryBayarActivity  extends AppCompatActivity implements ListView
                 String nominal = jo.getString(Config.TAG_NOMINAL);
 
                 HashMap<String,String> historyBayar = new HashMap<>();
-                historyBayar.put(Config.TAG_NIS, "NIS: "+ nis);
-                historyBayar.put(Config.TAG_BULAN, "Bulan: "+ bulan);
-                historyBayar.put(Config.TAG_TANGGAL_BAYAR, "Tanggal: "+ tgl_bayar);
-                historyBayar.put(Config.TAG_NOMINAL, "Nominal: "+ nominal);
+                historyBayar.put(Config.TAG_NIS, nis);
+                historyBayar.put(Config.TAG_BULAN,  bulan);
+                historyBayar.put(Config.TAG_TANGGAL_BAYAR,  tgl_bayar);
+                historyBayar.put(Config.TAG_NOMINAL,  nominal);
                 list.add(historyBayar);
             }
 
@@ -79,7 +86,7 @@ public class HistoryBayarActivity  extends AppCompatActivity implements ListView
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                com.syads.myganesa.treasurer.HistoryBayarActivity.this, list, R.layout.list_item_pembayaran_treasurer,
+                HistoryBayarActivity.this, list, R.layout.list_item_pembayaran_treasurer,
                 new String[]{ Config.TAG_NIS, Config.TAG_BULAN, Config.TAG_TANGGAL_BAYAR
                         , Config.TAG_NOMINAL},
                 new int[]{R.id.nis, R.id.bulan, R.id.tanggal_bayar, R.id.nominal});

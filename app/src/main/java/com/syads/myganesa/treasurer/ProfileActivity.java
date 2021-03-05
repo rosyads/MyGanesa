@@ -36,39 +36,27 @@ public class ProfileActivity extends AppCompatActivity {
         textViewRole.setText(user.getRole());
 
         //when the user presses logout button calling the logout method
-        findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                PrefManager.getInstance(getApplicationContext()).logout();
-            }
+        findViewById(R.id.buttonLogout).setOnClickListener(view -> {
+            finish();
+            PrefManager.getInstance(getApplicationContext()).logout();
         });
 
-        findViewById(R.id.buttonBayar).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(com.syads.myganesa.treasurer.ProfileActivity.this,
-                        com.syads.myganesa.treasurer.BayarActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.buttonBayar).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this,
+                    BayarActivity.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.buttonTopUp).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(com.syads.myganesa.treasurer.ProfileActivity.this,
-                        com.syads.myganesa.treasurer.TopUpActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.buttonTopUp).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this,
+                    TopUpActivity.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.buttonHistory).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(com.syads.myganesa.treasurer.ProfileActivity.this,
-                        com.syads.myganesa.treasurer.HistoryBayarActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.buttonHistory).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this,
+                    HistoryBayarActivity.class);
+            startActivity(intent);
         });
     }
 }

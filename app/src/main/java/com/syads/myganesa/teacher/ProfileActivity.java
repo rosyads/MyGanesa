@@ -43,28 +43,24 @@ public class ProfileActivity extends AppCompatActivity {
         textViewNamaMatpel.setText(user.getNama_matpel());
 
         //when the user presses logout button calling the logout method
-        findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                PrefManager.getInstance(getApplicationContext()).logout();
-            }
+        findViewById(R.id.buttonLogout).setOnClickListener(view -> {
+            finish();
+            PrefManager.getInstance(getApplicationContext()).logout();
         });
 
-        findViewById(R.id.buttonAbsen).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, AbsenActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.buttonAbsen).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, AbsenActivity.class);
+            startActivity(intent);
         });
 
-        findViewById(R.id.buttonDaftarAbsen).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, DaftarAbsenActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.buttonDaftarAbsen).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, DaftarAbsenActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.buttonRekapAbsen).setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, RekapAbsenActivity.class);
+            startActivity(intent);
         });
 
     }

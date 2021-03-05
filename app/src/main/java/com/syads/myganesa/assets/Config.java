@@ -12,6 +12,7 @@ public class Config {
     public static final String URL_GET_ALL = URL_ROOT + "/tampil_jadwal.php";
     public static final String URL_GET_PAID = URL_ROOT + "/tampil_pembayaran.php";
     public static final String URL_GET_ABSENCE = URL_ROOT + "/tampil_absensi.php";
+    public static final String URL_GET_ABSENCE_TEACHER = URL_ROOT + "/tampil_absensi_guru.php";
     public static final String URL_GET_PAID_TREASURER = URL_ROOT + "/tampil_pembayaran_bendahara.php";
     public static final String URL_GET_TODAYS_CLASS = URL_ROOT + "/tampil_kelas_ajar.php";
     public static final String URL_GET_CLASS = URL_ROOT + "/tampil_kelas.php";

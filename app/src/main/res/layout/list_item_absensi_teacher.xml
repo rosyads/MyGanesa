@@ -3,36 +3,61 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvKelas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelas"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textSize="20sp" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow>
             <TextView
-                android:id="@+id/tanggal_bayar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="Tanggal"
+                android:paddingEnd="10dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="Nama"
+                android:paddingEnd="10dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="Kehadiran"
+                android:paddingEnd="10dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/tvTanggal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:paddingEnd="10dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
             <TextView
-                android:id="@+id/nis"
+                android:id="@+id/tvNama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:paddingEnd="10dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
             <TextView
-                android:id="@+id/bulan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
-            <TextView
-                android:id="@+id/nominal"
+                android:id="@+id/tvKehadiran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
@@ -40,25 +65,5 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
         </TableRow>
     </TableLayout>
-
-<!--    <TextView-->
-<!--        android:id="@+id/nis"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/bulan"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tanggal_bayar"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/nominal"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
 
 </LinearLayout>
