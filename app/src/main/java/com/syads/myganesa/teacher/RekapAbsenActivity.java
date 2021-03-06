@@ -75,12 +75,14 @@ public class RekapAbsenActivity extends AppCompatActivity implements ListView.On
                 }
                 String tanggal = jo.getString(Config.TAG_TANGGAL);
                 String nama = jo.getString(Config.TAG_NAMA);
+                String jamAbsen = jo.getString(Config.TAG_JAMPEL);
 
                 HashMap<String,String> historyAbsen = new HashMap<>();
                 historyAbsen.put(Config.TAG_TANGGAL, tanggal);
                 historyAbsen.put(Config.TAG_NAMA, nama);
                 historyAbsen.put(Config.TAG_KELAS,  kelas);
                 historyAbsen.put(Config.TAG_HARI,  "✅");
+                historyAbsen.put(Config.TAG_JAMPEL,  jamAbsen);
                 list.add(historyAbsen);
             }
 
@@ -91,8 +93,8 @@ public class RekapAbsenActivity extends AppCompatActivity implements ListView.On
         ListAdapter adapter = new SimpleAdapter(
                 RekapAbsenActivity.this, list, R.layout.list_item_absensi_teacher,
                 new String[]{Config.TAG_TANGGAL, Config.TAG_NAMA
-                        , Config.TAG_KELAS, Config.TAG_HARI},
-                new int[]{R.id.tvTanggal, R.id.tvNama, R.id.tvKelas, R.id.tvKehadiran});
+                        , Config.TAG_KELAS, Config.TAG_HARI, Config.TAG_JAMPEL},
+                new int[]{R.id.tvTanggal, R.id.tvNama, R.id.tvKelas, R.id.tvKehadiran, R.id.tvJamAbsen});
 
         listView.setAdapter(adapter);
     }

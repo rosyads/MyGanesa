@@ -12,8 +12,7 @@
         android:text="Kelas"
         android:textColor="#000"
         android:textAlignment="center"
-        android:layout_gravity="center"
-        android:textSize="20sp" />
+        android:layout_gravity="center"/>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -24,22 +23,25 @@
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:text="Tanggal"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:text="Nama"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:text="Kehadiran"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="Jam Absen"
+                android:paddingEnd="10dp"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -47,22 +49,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
             <TextView
                 android:id="@+id/tvNama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
             <TextView
                 android:id="@+id/tvKehadiran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:paddingEnd="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                android:paddingEnd="10dp"/>
+            <TextView
+                android:id="@+id/tvJamAbsen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:paddingEnd="10dp"/>
         </TableRow>
     </TableLayout>
 
